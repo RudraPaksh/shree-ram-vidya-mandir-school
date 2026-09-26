@@ -1,0 +1,282 @@
+<section class="hero">
+  
+ <!-- Luxury Monogram Background -->
+  <div class="hero-monogram" aria-hidden="true">
+    <img
+      src="assets/school/logo/logo.png"
+      alt=""
+    />
+  </div>
+  <div class="hero-copy">
+
+   <!-- SCHOOL IDENTITY -->
+<div class="school-identity">
+
+  <div class="hero-logo">
+    <img
+      src="assets/school/logo/logo.png"
+      alt="Shri Ram Vidya Mandir Public School logo"
+    />
+  </div>
+
+  <div class="school-brand">
+
+    <span class="school-name">
+      Shri Ram Vidya Mandir
+    </span>
+
+    <span class="school-type">
+      PUBLIC SCHOOL
+    </span>
+
+  </div>
+
+</div>
+
+    <!-- Hero Eyebrow -->
+    <span class="eyebrow">
+      {{ text.hero.eyebrow }}
+    </span>
+
+    <!-- Hero Heading -->
+    <h1>
+      {{ text.hero.title1 }}
+      <br>
+      <em>{{ text.hero.title2 }}</em>
+    </h1>
+
+    <!-- Hero Description -->
+    <p>
+      {{ text.hero.description }}
+    </p>
+
+    <!-- Hero Buttons -->
+    <div class="hero-actions">
+
+      <a
+        routerLink="/about"
+        class="btn btn-primary"
+      >
+        {{ text.hero.discover }}
+        <span>→</span>
+      </a>
+
+      <a
+        routerLink="/gallery"
+        class="btn btn-gallery"
+      >
+        {{ text.hero.gallery }}
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- Hero Image -->
+  <div class="hero-art">
+
+    <img
+      src="assets/school/hero/hero.png"
+      alt="Children learning at school"
+    />
+
+  </div>
+
+</section>
+
+
+<!-- INTRO -->
+<section class="intro section">
+
+  <app-section-title
+    [eyebrow]="text.intro.eyebrow"
+    [title]="text.intro.title"
+    [text]="text.intro.text"
+  />
+
+  <div class="stats">
+
+    <div>
+      <strong>7</strong>
+      <span>{{ text.intro.stats.stages }}</span>
+    </div>
+
+    <div>
+      <strong>1:1</strong>
+      <span>{{ text.intro.stats.attention }}</span>
+    </div>
+
+    <div>
+      <strong>∞</strong>
+      <span>{{ text.intro.stats.curiosity }}</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LEARNING JOURNEY -->
+<section class="section cream">
+
+  <app-section-title
+    center
+    [eyebrow]="text.learning.eyebrow"
+    [title]="text.learning.title"
+    [text]="text.learning.text"
+  />
+
+  <div class="class-grid">
+
+    @for (item of classes; track item.name) {
+
+      <a
+        class="class-card"
+        [routerLink]="['/academics']"
+      >
+
+        <img
+          [src]="item.image"
+          [alt]="item.name"
+        />
+
+        <div>
+
+          <span>{{ item.name }}</span>
+
+          <h3>
+            {{ item.focus }}
+          </h3>
+
+          <p>
+            {{ item.highlights.join(' · ') }}
+          </p>
+
+        </div>
+
+      </a>
+
+    }
+
+  </div>
+
+</section>
+
+
+<!-- SVM DIFFERENCE -->
+<section class="section">
+
+  <div class="feature-grid">
+
+    <div>
+
+      <app-section-title
+        [eyebrow]="text.difference.eyebrow"
+        [title]="text.difference.title"
+        [text]="text.difference.text"
+      />
+
+      <a
+        class="text-link"
+        routerLink="/activities"
+      >
+        {{ text.difference.link }}
+      </a>
+
+    </div>
+
+    <img
+      src="assets/school/campus/campus.svg"
+      alt="School campus"
+      loading="lazy"
+    />
+
+  </div>
+
+</section>
+
+
+<!-- SCHOOL LIFE -->
+<!-- SCHOOL LIFE -->
+<section class="section cream">
+
+  <app-section-title
+    center
+    [eyebrow]="text.schoolLife.eyebrow"
+    [title]="text.schoolLife.title"
+    [text]="text.schoolLife.text"
+  />
+
+  <div class="gallery-preview">
+
+    @for (item of gallery.slice(0, 4); track item.image) {
+
+      <app-image-card
+        [image]="item.image"
+        [title]="item.title"
+        [category]="item.category"
+      />
+
+    }
+
+  </div>
+
+  <div class="center-link">
+
+    <a
+      class="btn btn-primary"
+      routerLink="/gallery"
+    >
+      {{ text.schoolLife.button }}
+      <span>→</span>
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- TOPPERS -->
+<section class="section">
+
+  <app-section-title
+    center
+    [eyebrow]="text.toppers.eyebrow"
+    [title]="text.toppers.title"
+    [text]="text.toppers.text"
+  />
+
+  <div class="topper-grid">
+
+    @for (topper of toppers; track topper.name) {
+
+      <div class="topper">
+
+        <img
+          [src]="topper.image"
+          [alt]="topper.name"
+        />
+
+        <div>
+
+          <span>
+            {{ topper.className }}
+          </span>
+
+          <h3>
+            {{ topper.name }}
+          </h3>
+
+          <strong>
+            {{ topper.score }}
+          </strong>
+
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+</section>

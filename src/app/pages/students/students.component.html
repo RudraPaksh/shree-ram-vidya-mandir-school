@@ -1,0 +1,585 @@
+<main class="students-page">
+
+  <!-- =========================================
+       HERO
+  ========================================== -->
+  <section class="student-hero">
+
+    <!-- Luxury background monogram -->
+    <div class="student-monogram" aria-hidden="true">
+      <div class="monogram-orbit orbit-one"></div>
+      <div class="monogram-orbit orbit-two"></div>
+      <div class="monogram-orbit orbit-three"></div>
+
+      <span class="monogram-star star-one">✦</span>
+      <span class="monogram-star star-two">✧</span>
+      <span class="monogram-star star-three">✦</span>
+      <span class="monogram-star star-four">·</span>
+
+      <img
+        src="assets/school/logo/logo.png"
+        alt=""
+      />
+    </div>
+
+    <div class="hero-glow glow-one"></div>
+    <div class="hero-glow glow-two"></div>
+
+    <div class="student-hero-inner">
+
+      <div class="hero-copy">
+
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span>STUDENT LIFE · SINCE 1999</span>
+          <span class="eyebrow-line"></span>
+        </div>
+
+        <h1>
+          More than
+          <em>a classroom.</em>
+        </h1>
+
+        <p class="hero-description">
+          Childhood is filled with friendships, play, creativity,
+          discovery and those little moments that become lifelong memories.
+        </p>
+
+        <div class="hero-actions">
+          <button
+            type="button"
+            class="luxury-button primary"
+            (click)="scrollToActivities()"
+          >
+            <span>Explore Student Life</span>
+            <strong>↓</strong>
+          </button>
+
+          <a
+            routerLink="/gallery"
+            class="luxury-button secondary"
+          >
+            <span>View Gallery</span>
+            <strong>→</strong>
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <div>
+            <strong>01</strong>
+            <span>Joyful<br />learning</span>
+          </div>
+
+          <div class="meta-divider"></div>
+
+          <div>
+            <strong>02</strong>
+            <span>Creative<br />expression</span>
+          </div>
+
+          <div class="meta-divider"></div>
+
+          <div>
+            <strong>03</strong>
+            <span>Growing<br />together</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero visual -->
+      <div class="hero-visual">
+
+        <div class="visual-frame">
+
+          <div class="visual-corner corner-tl"></div>
+          <div class="visual-corner corner-tr"></div>
+          <div class="visual-corner corner-bl"></div>
+          <div class="visual-corner corner-br"></div>
+
+          <div class="visual-image">
+            <img
+              src="assets/school/activities/activity.png"
+              alt="Students enjoying a school activity"
+            />
+
+            <div class="image-overlay"></div>
+
+            <div class="visual-caption">
+              <span>THE SCHOOL EXPERIENCE</span>
+              <strong>Learn · Play · Discover</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="floating-note note-one">
+          <span>✦</span>
+          <strong>Curiosity</strong>
+        </div>
+
+        <div class="floating-note note-two">
+          <span>✧</span>
+          <strong>Creativity</strong>
+        </div>
+
+        <div class="floating-note note-three">
+          <span>✦</span>
+          <strong>Confidence</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="hero-scroll">
+      <span>SCROLL TO EXPLORE</span>
+      <i></i>
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       INTRO
+  ========================================== -->
+  <section class="student-intro section">
+
+    <div class="intro-monogram" aria-hidden="true">
+      <img src="assets/school/logo/logo.png" alt="" />
+    </div>
+
+    <div class="intro-content">
+
+      <span class="section-kicker">
+        A CHILD'S WORLD
+      </span>
+
+      <div class="section-divider">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+      </div>
+
+      <h2>
+        Childhood deserves
+        <em>room to flourish.</em>
+      </h2>
+
+      <p class="intro-lead">
+        At Shree Ram Vidya Mandir Public School, student life
+        extends beyond lessons and textbooks.
+      </p>
+
+      <p>
+        We create opportunities for children to move, imagine,
+        participate, collaborate and simply enjoy being children.
+        Every experience contributes to their confidence,
+        character and sense of belonging.
+      </p>
+
+      <div class="intro-signature">
+        <span>SHREE RAM VIDYA MANDIR</span>
+        <small>PUBLIC SCHOOL · DELHI</small>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       ACTIVITIES
+  ========================================== -->
+  <section
+    class="activities-section section"
+    id="student-activities"
+  >
+
+    <div class="section-heading">
+
+      <div>
+        <span class="section-kicker">
+          DISCOVER · PARTICIPATE · GROW
+        </span>
+
+        <h2>
+          Little moments.
+          <em>Big memories.</em>
+        </h2>
+      </div>
+
+      <p>
+        Explore the experiences that make everyday school life
+        joyful, social and meaningful.
+      </p>
+
+    </div>
+
+
+    <!-- Activity navigation -->
+    <div class="activity-tabs">
+
+      @for (
+        item of activities;
+        track item.title;
+        let i = $index
+      ) {
+
+        <button
+          type="button"
+          class="activity-tab"
+          [class.active]="activeActivity === i"
+          (click)="setActivity(i)"
+        >
+          <span class="tab-number">
+            {{ (i + 1).toString().padStart(2, '0') }}
+          </span>
+
+          <span class="tab-title">
+            {{ item.title }}
+          </span>
+
+          <span class="tab-arrow">→</span>
+        </button>
+
+      }
+
+    </div>
+
+
+    <!-- Featured activity -->
+    @if (activities.length > 0) {
+
+      <div class="featured-activity">
+
+        <div class="featured-image">
+
+          <img
+            [src]="activities[activeActivity].image || 'assets/school/activities/activity.png'"
+            [alt]="activities[activeActivity].title"
+          />
+
+          <div class="featured-overlay"></div>
+
+          <div class="featured-number">
+            {{ (activeActivity + 1).toString().padStart(2, '0') }}
+          </div>
+
+          <div class="featured-image-caption">
+            <span>STUDENT LIFE</span>
+            <strong>
+              {{ activities[activeActivity].title }}
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="featured-content">
+
+          <span class="featured-kicker">
+            EVERYDAY EXPERIENCE
+          </span>
+
+          <div class="featured-icon">
+            {{ activities[activeActivity].icon }}
+          </div>
+
+          <h3>
+            {{ activities[activeActivity].title }}
+          </h3>
+
+          <p>
+            {{ activities[activeActivity].text }}
+          </p>
+
+          <div class="featured-rule"></div>
+
+          <div class="featured-footer">
+
+            <span>
+              <i>✦</i>
+              Explore
+            </span>
+
+            <button
+              type="button"
+              (click)="scrollToActivities()"
+            >
+              Discover more
+              <strong>→</strong>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    }
+
+
+    <!-- Activity cards -->
+    <div class="activity-grid">
+
+      @for (
+        item of activities;
+        track item.title;
+        let i = $index
+      ) {
+
+        <article
+          class="activity-card"
+          [class.active]="activeActivity === i"
+          (click)="setActivity(i)"
+        >
+
+          <div class="activity-card-top">
+
+            <span class="activity-index">
+              {{ (i + 1).toString().padStart(2, '0') }}
+            </span>
+
+            <span class="activity-icon">
+              {{ item.icon }}
+            </span>
+
+          </div>
+
+          <h3>
+            {{ item.title }}
+          </h3>
+
+          <p>
+            {{ item.text }}
+          </p>
+
+          <div class="activity-card-bottom">
+            <span>
+              Explore experience
+            </span>
+
+            <strong>↗</strong>
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       PILLARS
+  ========================================== -->
+  <section class="pillars-section">
+
+    <div class="pillar-background-monogram" aria-hidden="true">
+      <img src="assets/school/logo/logo.png" alt="" />
+    </div>
+
+    <div class="section pillars-inner">
+
+      <div class="section-heading centered">
+
+        <span class="section-kicker">
+          WHAT CHILDREN DISCOVER
+        </span>
+
+        <div class="section-divider">
+          <span></span>
+          <i>✦</i>
+          <span></span>
+        </div>
+
+        <h2>
+          Growing beyond
+          <em>the classroom.</em>
+        </h2>
+
+        <p>
+          The most meaningful lessons often happen when children
+          are free to participate, explore and experience.
+        </p>
+
+      </div>
+
+
+      <div class="pillars-grid">
+
+        @for (
+          pillar of studentPillars;
+          track pillar.number
+        ) {
+
+          <article class="pillar-card">
+
+            <div class="pillar-top">
+              <span>{{ pillar.number }}</span>
+              <i>{{ pillar.icon }}</i>
+            </div>
+
+            <h3>
+              {{ pillar.title }}
+            </h3>
+
+            <p>
+              {{ pillar.text }}
+            </p>
+
+            <div class="pillar-line"></div>
+
+          </article>
+
+        }
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       PHOTO STORY
+  ========================================== -->
+  <section class="photo-story">
+
+    <div class="photo-story-image">
+
+      <img
+        src="assets/school/activities/activity.png"
+        alt="Children participating in school activities"
+      />
+
+      <div class="photo-story-overlay"></div>
+
+      <div class="photo-story-stamp">
+        <span>EST.</span>
+        <strong>1999</strong>
+        <small>DELHI</small>
+      </div>
+
+    </div>
+
+
+    <div class="photo-story-content">
+
+      <span class="section-kicker">
+        EVERYDAY JOY
+      </span>
+
+      <div class="section-divider left">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+      </div>
+
+      <h2>
+        Let children
+        <em>be children.</em>
+      </h2>
+
+      <p class="story-lead">
+        School should be a place where children feel excited
+        to arrive, comfortable to express themselves and proud
+        of the person they are becoming.
+      </p>
+
+      <p>
+        From playful experiences to creative expression and
+        friendships that grow over time, student life gives
+        children memories they carry far beyond the school gate.
+      </p>
+
+      <div class="story-actions">
+
+        <a
+          routerLink="/gallery"
+          class="story-button"
+        >
+          <span>See the Gallery</span>
+          <strong>→</strong>
+        </a>
+
+        <a
+          routerLink="/about"
+          class="story-link"
+        >
+          Discover our school
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       PARENT NOTE
+  ========================================== -->
+  <section class="parent-note section">
+
+    <div class="parent-note-card">
+
+      <div class="note-monogram" aria-hidden="true">
+        <img src="assets/school/logo/logo.png" alt="" />
+      </div>
+
+      <div class="note-content">
+
+        <span class="section-kicker">
+          FOR FAMILIES
+        </span>
+
+        <h2>
+          A school experience
+          <em>worth remembering.</em>
+        </h2>
+
+        <p>
+          We believe that the school years are not simply
+          preparation for the future. They are an important
+          part of childhood itself.
+        </p>
+
+        <div class="note-points">
+
+          <span>
+            <i>✦</i>
+            Joyful experiences
+          </span>
+
+          <span>
+            <i>✦</i>
+            Meaningful friendships
+          </span>
+
+          <span>
+            <i>✦</i>
+            Confident expression
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================
+       REUSABLE LUXURY CTA
+  ========================================== -->
+  <svm-luxury-cta
+    title="Begin your child's next chapter."
+    description="Discover a school experience where learning, friendship, creativity and character grow together."
+  ></svm-luxury-cta>
+
+</main>

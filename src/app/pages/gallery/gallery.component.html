@@ -1,0 +1,577 @@
+<main class="gallery-page">
+
+  <!-- ========================================= -->
+  <!-- HERO -->
+  <!-- ========================================= -->
+
+  <section class="gallery-hero">
+
+    <div class="hero-glow hero-glow-one"></div>
+    <div class="hero-glow hero-glow-two"></div>
+
+    <div class="hero-pattern"></div>
+
+    <div class="hero-content">
+
+      <div class="hero-monogram">
+        <span>SRVM</span>
+        <small>EST. 1999</small>
+      </div>
+
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>OUR VISUAL JOURNEY</span>
+        <span class="eyebrow-line"></span>
+      </div>
+
+      <h1>
+        Little moments.
+        <br>
+        <em>Beautiful memories.</em>
+      </h1>
+
+      <p class="hero-description">
+        A collection of moments, celebrations, discoveries
+        and memories that make our school journey special.
+      </p>
+
+      <div class="hero-actions">
+
+        <a
+          class="hero-button primary"
+          href="#school-gallery">
+          Explore Gallery
+          <span>↓</span>
+        </a>
+
+        <a
+          class="hero-button secondary"
+          routerLink="/contact">
+          Visit Our School
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-side">
+
+      <div class="hero-side-card">
+
+        <span class="side-number">25+</span>
+
+        <span class="side-label">
+          YEARS OF
+          <br>
+          MEMORIES
+        </span>
+
+        <div class="side-divider"></div>
+
+        <p>
+          Since 1999, growing,
+          learning and celebrating
+          together.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+      <span></span>
+      <small>SCROLL TO EXPLORE</small>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- INTRO / STATS -->
+  <!-- ========================================= -->
+
+  <section class="gallery-intro">
+
+    <div class="intro-heading">
+
+      <span class="section-kicker">
+        THE SRVM COLLECTION
+      </span>
+
+      <h2>
+        Every picture tells
+        <br>
+        <em>a story.</em>
+      </h2>
+
+    </div>
+
+    <div class="intro-copy">
+
+      <p>
+        From classroom discoveries to celebrations,
+        friendships and proud moments — our gallery
+        captures the experiences that become part of
+        a child's school memories.
+      </p>
+
+      <div class="intro-signature">
+        <span>Shree Ram Vidya Mandir</span>
+        <small>Public School · Delhi 110092</small>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- STAT STRIP -->
+  <!-- ========================================= -->
+
+  <section class="gallery-stats">
+
+    <div class="stat">
+      <strong>{{ gallery.length }}</strong>
+      <span>MEMORIES</span>
+    </div>
+
+    <div class="stat">
+      <strong>{{ categories.length - 1 }}</strong>
+      <span>COLLECTIONS</span>
+    </div>
+
+    <div class="stat">
+      <strong>1999</strong>
+      <span>ESTABLISHED</span>
+    </div>
+
+    <div class="stat">
+      <strong>∞</strong>
+      <span>MEMORIES TO COME</span>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- GALLERY -->
+  <!-- ========================================= -->
+
+  <section
+    class="gallery-section"
+    id="school-gallery">
+
+    <div class="gallery-heading">
+
+      <div>
+        <span class="section-kicker">
+          MOMENTS & MEMORIES
+        </span>
+
+        <h2>
+          Explore our
+          <em>gallery</em>
+        </h2>
+      </div>
+
+      <p>
+        Discover the people, places and experiences
+        that make our school community special.
+      </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+    <div class="gallery-tools">
+
+      <div class="search-box">
+
+        <span class="search-icon">⌕</span>
+
+        <input
+          type="search"
+          [(ngModel)]="searchTerm"
+          placeholder="Search memories..."
+          aria-label="Search gallery">
+
+        @if (searchTerm) {
+          <button
+            type="button"
+            class="clear-search"
+            (click)="clearSearch()"
+            aria-label="Clear search">
+            ×
+          </button>
+        }
+
+      </div>
+
+
+      <!-- FILTERS -->
+
+      <div class="category-scroll">
+
+        @for (category of categories; track category) {
+
+          <button
+            type="button"
+            class="category-chip"
+            [class.active]="selectedCategory === category"
+            (click)="selectCategory(category)">
+
+            {{ category }}
+
+          </button>
+
+        }
+
+      </div>
+
+    </div>
+
+
+    <!-- RESULT COUNT -->
+
+    <div class="gallery-result-bar">
+
+      <span>
+        Showing
+        <strong>{{ filteredGallery.length }}</strong>
+        memories
+      </span>
+
+      @if (selectedCategory !== 'All' || searchTerm) {
+
+        <button
+          type="button"
+          (click)="selectCategory('All'); clearSearch()">
+
+          Reset filters
+
+          <span>↺</span>
+
+        </button>
+
+      }
+
+    </div>
+
+
+    <!-- EMPTY STATE -->
+
+    @if (filteredGallery.length === 0) {
+
+      <div class="empty-gallery">
+
+        <div class="empty-icon">✦</div>
+
+        <h3>No memories found</h3>
+
+        <p>
+          Try another search or explore a different collection.
+        </p>
+
+        <button
+          type="button"
+          (click)="selectCategory('All'); clearSearch()">
+          View all memories
+        </button>
+
+      </div>
+
+    }
+
+
+    <!-- MASONRY GALLERY -->
+
+    @if (filteredGallery.length > 0) {
+
+      <div class="luxury-gallery">
+
+        @for (
+          item of filteredGallery;
+          track item.image;
+          let i = $index
+        ) {
+
+          <article
+            class="gallery-card"
+            [class.featured]="i === 0">
+
+            <button
+              type="button"
+              class="image-button"
+              (click)="open(item)"
+              [attr.aria-label]="'Open ' + item.title">
+
+              <img
+                [src]="item.image"
+                [alt]="item.title"
+                loading="lazy">
+
+              <div class="image-overlay"></div>
+
+              <div class="image-number">
+                {{ (i + 1).toString().padStart(2, '0') }}
+              </div>
+
+              <div class="image-open">
+                <span>+</span>
+              </div>
+
+              <div class="image-caption">
+
+                <span>{{ item.category }}</span>
+
+                <h3>
+                  {{ item.title }}
+                </h3>
+
+              </div>
+
+            </button>
+
+
+            <div class="card-footer">
+
+              <div>
+                <span class="card-category">
+                  {{ item.category }}
+                </span>
+
+                <h3>
+                  {{ item.title }}
+                </h3>
+              </div>
+
+              <button
+                type="button"
+                class="favorite-button"
+                [class.favorite]="isFavorite(item)"
+                (click)="toggleFavorite(item, $event)"
+                [attr.aria-label]="
+                  isFavorite(item)
+                    ? 'Remove from favorites'
+                    : 'Add to favorites'
+                ">
+
+                {{ isFavorite(item) ? '♥' : '♡' }}
+
+              </button>
+
+            </div>
+
+          </article>
+
+        }
+
+      </div>
+
+    }
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- HERITAGE BAND -->
+  <!-- ========================================= -->
+
+  <section class="heritage-section">
+
+    <div class="heritage-inner">
+
+      <div class="heritage-ornament">
+        ✦
+      </div>
+
+      <span class="section-kicker">
+        SINCE 1999
+      </span>
+
+      <h2>
+        Memories today.
+        <br>
+        <em>Legacy tomorrow.</em>
+      </h2>
+
+      <p>
+        More than photographs, these are fragments
+        of a journey — moments that stay with us
+        long after the school day ends.
+      </p>
+
+      <div class="heritage-line"></div>
+
+      <span class="heritage-school">
+        SHREE RAM VIDYA MANDIR PUBLIC SCHOOL
+      </span>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- CTA -->
+  <!-- ========================================= -->
+
+  <section class="gallery-cta">
+
+    <div class="cta-content">
+
+      <span class="section-kicker">
+        YOUR STORY STARTS HERE
+      </span>
+
+      <h2>
+        Become part of
+        <br>
+        <em>our next chapter.</em>
+      </h2>
+
+      <p>
+        Discover a learning environment where
+        every day creates a new memory.
+      </p>
+
+      <div class="cta-actions">
+
+        <a
+          routerLink="/admissions"
+          class="luxury-cta primary">
+          Explore Admissions
+          <span>↗</span>
+        </a>
+
+        <a
+          routerLink="/contact"
+          class="luxury-cta secondary">
+          Contact School
+          <span>→</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ========================================= -->
+  <!-- LIGHTBOX -->
+  <!-- ========================================= -->
+
+  @if (active) {
+
+    <div
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="active.title"
+      (click)="close()">
+
+      <div class="lightbox-backdrop"></div>
+
+
+      <!-- CLOSE -->
+
+      <button
+        type="button"
+        class="lightbox-close"
+        (click)="close()"
+        aria-label="Close gallery">
+
+        <span></span>
+        <span></span>
+
+      </button>
+
+
+      <!-- PREVIOUS -->
+
+      <button
+        type="button"
+        class="lightbox-nav previous"
+        (click)="$event.stopPropagation(); previous()"
+        aria-label="Previous image">
+
+        ←
+
+      </button>
+
+
+      <!-- IMAGE -->
+
+      <div
+        class="lightbox-content"
+        (click)="$event.stopPropagation()">
+
+        <div class="lightbox-image-wrap">
+
+          <img
+            [src]="active.image"
+            [alt]="active.title">
+
+          <div class="lightbox-frame"></div>
+
+        </div>
+
+        <div class="lightbox-info">
+
+          <div>
+
+            <span>
+              {{ active.category }}
+            </span>
+
+            <h2>
+              {{ active.title }}
+            </h2>
+
+            <p>
+              {{ active.description }}
+            </p>
+
+          </div>
+
+          <div class="lightbox-counter">
+
+            <strong>
+              {{ (activeIndex + 1).toString().padStart(2, '0') }}
+            </strong>
+
+            <span>/ {{ gallery.length.toString().padStart(2, '0') }}</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- NEXT -->
+
+      <button
+        type="button"
+        class="lightbox-nav next"
+        (click)="$event.stopPropagation(); next()"
+        aria-label="Next image">
+
+        →
+
+      </button>
+
+      <div class="lightbox-hint">
+        <span>←</span>
+        <span>→</span>
+        <small>Navigate</small>
+      </div>
+
+    </div>
+
+  }
+
+</main>

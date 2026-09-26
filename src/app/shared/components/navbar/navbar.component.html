@@ -1,0 +1,239 @@
+
+<header class="site-header">
+
+  <!-- Ambient decorative lights -->
+  <div class="header-glow header-glow-left"></div>
+  <div class="header-glow header-glow-right"></div>
+
+  <div class="nav-inner">
+
+    <!-- =========================================
+         BRAND / LOGO
+    ========================================== -->
+
+    <a
+      class="brand"
+      routerLink="/"
+      (click)="closeMenu()"
+      aria-label="Shree Ram Vidya Mandir Public School Home"
+    >
+
+      <div class="logo-wrap">
+
+        <!-- Outer animated ring -->
+        <div class="logo-ring"></div>
+
+        <!-- Small heritage dots -->
+        <span class="logo-dot logo-dot-top"></span>
+        <span class="logo-dot logo-dot-bottom"></span>
+
+        <img
+          src="assets/school/logo/logo.png"
+          alt="Shree Ram Vidya Mandir Public School logo"
+        />
+
+      </div>
+
+
+      <div class="brand-text">
+
+        <strong>
+          Shree Ram Vidya Mandir Public School
+        </strong>
+
+        <small>
+          LKG TO V · ज्ञान • संस्कार • प्रगति
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav
+      [class.open]="menuOpen"
+      aria-label="Main navigation"
+    >
+
+      <div class="nav-mobile-title">
+        <span>EXPLORE</span>
+        <i>SRVM</i>
+      </div>
+
+
+      <!-- HOME -->
+
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        (click)="closeMenu()"
+      >
+        <span class="nav-icon">⌂</span>
+        <span>Home</span>
+      </a>
+
+
+      <!-- ABOUT -->
+
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        <span class="nav-icon">✦</span>
+        <span>About</span>
+      </a>
+
+
+      <!-- PRINCIPAL -->
+
+      <a
+        routerLink="/principal"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        <span class="nav-icon">◈</span>
+        <span>Principal</span>
+      </a>
+
+
+      <!-- ACADEMICS -->
+
+      <a
+        routerLink="/academics"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        <span class="nav-icon">▤</span>
+        <span>Academics</span>
+      </a>
+
+
+      <!-- STUDENTS -->
+
+      <a
+        routerLink="/students"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        <span class="nav-icon">♧</span>
+        <span>Students</span>
+      </a>
+
+
+      <!-- GALLERY -->
+
+      <a
+        routerLink="/gallery"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        <span class="nav-icon">◇</span>
+        <span>Gallery</span>
+      </a>
+
+
+      <!-- CONTACT -->
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        (click)="closeMenu()"
+      >
+        <span class="nav-icon">✉</span>
+        <span>Contact</span>
+      </a>
+
+
+      <!-- MOBILE CTA -->
+
+      <a
+        class="nav-cta"
+        routerLink="/contact"
+        (click)="closeMenu()"
+      >
+        <span>Visit School</span>
+        <b>↗</b>
+      </a>
+
+    </nav>
+
+
+    <!-- =========================================
+         LANGUAGE SWITCHER
+    ========================================== -->
+
+    <div
+      class="language-switcher"
+      aria-label="Language selector"
+    >
+
+      <button
+        type="button"
+        [class.active]="languageService.language() === 'en'"
+        (click)="changeLanguage('en')"
+        aria-label="English"
+      >
+        EN
+      </button>
+
+      <span></span>
+
+      <button
+        type="button"
+        [class.active]="languageService.language() === 'hi'"
+        (click)="changeLanguage('hi')"
+        aria-label="Hindi"
+      >
+        हिंदी
+      </button>
+
+    </div>
+
+
+    <!-- =========================================
+         MOBILE MENU
+    ========================================== -->
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="menuOpen"
+      (click)="menuOpen = !menuOpen"
+    >
+
+      <span [class.rotate]="menuOpen"></span>
+      <span [class.rotate]="menuOpen"></span>
+      <span [class.rotate]="menuOpen"></span>
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================================
+       GOLD HERITAGE DIVIDER
+  ========================================== -->
+
+  <div class="nav-decoration">
+
+    <span></span>
+
+    <i>✦</i>
+
+    <small>SRVM</small>
+
+    <i>✦</i>
+
+    <span></span>
+
+  </div>
+
+</header>
+

@@ -1,0 +1,568 @@
+<!-- =========================================================
+     PRINCIPAL HERO
+     ========================================================= -->
+
+<section class="principal-hero">
+
+  <!-- =====================================================
+       LUXURY SCHOOL MONOGRAM
+       ===================================================== -->
+
+  <div class="principal-monogram" aria-hidden="true">
+
+    <div class="monogram-orbit orbit-one"></div>
+    <div class="monogram-orbit orbit-two"></div>
+
+    <img
+      src="assets/school/logo/logo.png"
+      alt=""
+    />
+
+  </div>
+
+
+  <!-- Floating decorative stars -->
+
+  <span class="principal-spark spark-one" aria-hidden="true">✦</span>
+  <span class="principal-spark spark-two" aria-hidden="true">✧</span>
+  <span class="principal-spark spark-three" aria-hidden="true">✦</span>
+
+
+  <div class="principal-hero-decoration decoration-one"></div>
+  <div class="principal-hero-decoration decoration-two"></div>
+
+
+  <div class="principal-hero-inner">
+
+    <!-- LEFT: PORTRAIT -->
+
+    <div class="principal-portrait-wrap">
+
+      <div class="portrait-frame">
+
+        <div class="portrait-gold-ring"></div>
+
+        <img
+          src="assets/school/principal/principal.svg"
+          alt="Mrs. Meenakshi Pandey, Principal of Shri Ram Vidya Mandir Public School"
+        />
+
+      </div>
+
+      <div class="portrait-caption">
+
+        <span>
+          {{ isHindi ? 'विद्यालय की प्रधानाचार्या' : 'PRINCIPAL' }}
+        </span>
+
+        <strong>
+          Mrs. Meenakshi Pandey
+        </strong>
+
+        <small>
+          Shri Ram Vidya Mandir Public School
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT: INTRODUCTION -->
+
+    <div class="principal-intro">
+
+      <span class="eyebrow">
+        {{ isHindi ? 'प्रधानाचार्या का संदेश' : "PRINCIPAL'S MESSAGE" }}
+      </span>
+
+
+      <h1>
+
+        @if (isHindi) {
+
+          हर बच्चे को यह खोजने दें
+          <em>कि वह क्या बन सकता है।</em>
+
+        } @else {
+
+          Let every child discover
+          <em>what they can become.</em>
+
+        }
+
+      </h1>
+
+
+      <div class="gold-line"></div>
+
+
+      <div class="principal-quote">
+
+        <span class="quote-mark">“</span>
+
+        <p>
+
+          @if (isHindi) {
+
+            हमारी जिम्मेदारी केवल बच्चों को यह सिखाना नहीं है
+            कि क्या सीखना है, बल्कि उन्हें यह समझने में सहायता
+            करना है कि वे कैसे सीखते हैं, कैसे दूसरों की परवाह
+            करते हैं और समाज में अपना योगदान कैसे देते हैं।
+
+          } @else {
+
+            Our responsibility is not only to teach children
+            what to learn, but to help them discover how they
+            learn, how they care and how they contribute.
+
+          }
+
+        </p>
+
+      </div>
+
+
+      <div class="principal-actions">
+
+        <a
+          routerLink="/contact"
+          class="principal-btn primary"
+        >
+          {{ isHindi ? 'प्रवेश के लिए पूछताछ करें' : 'Admission Enquiry' }}
+          <span>→</span>
+        </a>
+
+        <a
+          routerLink="/about"
+          class="principal-btn secondary"
+        >
+          {{ isHindi ? 'विद्यालय के बारे में' : 'About Our School' }}
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRINCIPAL MESSAGE
+     ========================================================= -->
+
+<section class="section principal-message-section">
+
+  <div class="principal-message-grid">
+
+    <div class="message-label">
+
+      <span class="vertical-line"></span>
+
+      <span>
+        {{ isHindi ? 'हमारी सोच' : 'OUR APPROACH' }}
+      </span>
+
+    </div>
+
+
+    <div class="message-content">
+
+      <h2>
+
+        @if (isHindi) {
+
+          विद्यालय केवल पढ़ने की जगह नहीं,
+          <em>सीखने और बढ़ने की जगह है।</em>
+
+        } @else {
+
+          School is not only a place to study,
+          <em>it is a place to grow.</em>
+
+        }
+
+      </h2>
+
+
+      <p>
+
+        @if (isHindi) {
+
+          श्री राम विद्या मंदिर में हमारा प्रयास है कि विद्यालय
+          बच्चों के लिए ऐसा स्थान बने जहाँ वे हर सुबह उत्साह
+          के साथ आएँ। हम मजबूत शैक्षिक नींव, संवेदनशील मार्गदर्शन
+          और कठिन परिस्थितियों में दोबारा प्रयास करने के
+          आत्मविश्वास को महत्व देते हैं।
+
+        } @else {
+
+          At Shri Ram Vidya Mandir, we want school to feel like
+          a place where children are excited to arrive each morning.
+          We value strong foundations, thoughtful guidance and
+          the confidence to try again when something feels difficult.
+
+        }
+
+      </p>
+
+
+      <p>
+
+        @if (isHindi) {
+
+          हमारा मानना है कि प्रत्येक बच्चा अपनी गति, अपनी
+          रुचियों और अपनी विशेष क्षमताओं के साथ सीखता है।
+          इसलिए हमारा उद्देश्य बच्चों को केवल अच्छे विद्यार्थी
+          बनाना नहीं, बल्कि उन्हें संवेदनशील, आत्मविश्वासी,
+          जिज्ञासु और जिम्मेदार व्यक्तित्व के रूप में विकसित
+          करना है।
+
+        } @else {
+
+          We believe every child learns at their own pace,
+          with their own interests and unique strengths.
+          Our aim is therefore not simply to create good students,
+          but to nurture thoughtful, confident, curious and
+          responsible individuals.
+
+        }
+
+      </p>
+
+
+      <p>
+
+        @if (isHindi) {
+
+          हम हर छोटी उपलब्धि और हर बड़े सपने में परिवारों
+          के साथ मिलकर बच्चों की यात्रा का हिस्सा बनना चाहते हैं।
+
+        } @else {
+
+          We look forward to partnering with families through
+          every small milestone and every big dream.
+
+        }
+
+      </p>
+
+
+      <div class="principal-signature">
+
+        <strong>
+          Mrs. Meenakshi Pandey
+        </strong>
+
+        <span>
+          {{ isHindi ? 'प्रधानाचार्या' : 'Principal' }}
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VISION
+     ========================================================= -->
+
+<section class="vision-section">
+
+  <div class="vision-inner">
+
+    <div class="vision-heading">
+
+      <span class="eyebrow">
+
+        {{ isHindi ? 'हमारी दृष्टि' : 'HER VISION' }}
+
+      </span>
+
+      <h2>
+
+        @if (isHindi) {
+
+          शिक्षा जो
+          <em>जीवन के लिए तैयार करे।</em>
+
+        } @else {
+
+          Education that prepares
+          <em>children for life.</em>
+
+        }
+
+      </h2>
+
+      <p>
+
+        @if (isHindi) {
+
+          हमारा उद्देश्य ऐसा वातावरण बनाना है जहाँ ज्ञान,
+          संस्कार, रचनात्मकता और आत्मविश्वास साथ-साथ विकसित हों।
+
+        } @else {
+
+          Our aim is to create an environment where knowledge,
+          values, creativity and confidence grow together.
+
+        }
+
+      </p>
+
+    </div>
+
+
+    <div class="vision-cards">
+
+      <!-- CARD 1 -->
+      <article class="vision-card">
+
+        <div class="vision-icon">
+          <span>01</span>
+        </div>
+
+        <div>
+
+          <h3>
+            {{ isHindi ? 'मजबूत नींव' : 'Strong Foundations' }}
+          </h3>
+
+          <p>
+
+            @if (isHindi) {
+
+              बच्चों में सीखने की मजबूत बुनियाद और
+              ज्ञान के प्रति सकारात्मक दृष्टिकोण विकसित करना।
+
+            } @else {
+
+              Building strong foundations that help children
+              approach learning with confidence and curiosity.
+
+            }
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- CARD 2 -->
+      <article class="vision-card">
+
+        <div class="vision-icon">
+          <span>02</span>
+        </div>
+
+        <div>
+
+          <h3>
+            {{ isHindi ? 'अच्छे संस्कार' : 'Good Values' }}
+          </h3>
+
+          <p>
+
+            @if (isHindi) {
+
+              सम्मान, दया, अनुशासन और जिम्मेदारी जैसे
+              मूल्यों को दैनिक जीवन का हिस्सा बनाना।
+
+            } @else {
+
+              Nurturing respect, kindness, discipline and
+              responsibility as part of everyday life.
+
+            }
+
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- CARD 3 -->
+      <article class="vision-card">
+
+        <div class="vision-icon">
+          <span>03</span>
+        </div>
+
+        <div>
+
+          <h3>
+            {{ isHindi ? 'आत्मविश्वास' : 'Confidence' }}
+          </h3>
+
+          <p>
+
+            @if (isHindi) {
+
+              बच्चों को प्रश्न पूछने, प्रयास करने और
+              अपनी क्षमताओं पर विश्वास करने के लिए प्रेरित करना।
+
+            } @else {
+
+              Encouraging children to ask questions,
+              try again and believe in their abilities.
+
+            }
+
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FAMILY PARTNERSHIP
+     ========================================================= -->
+
+<section class="family-section section">
+
+  <div class="family-card">
+
+    <div class="family-content">
+
+      <span class="eyebrow">
+
+        {{ isHindi ? 'विद्यालय और परिवार' : 'SCHOOL & FAMILY' }}
+
+      </span>
+
+      <h2>
+
+        @if (isHindi) {
+
+          बच्चे की यात्रा में
+          <em>हम साथ हैं।</em>
+
+        } @else {
+
+          We walk alongside
+          <em>every family.</em>
+
+        }
+
+      </h2>
+
+      <p>
+
+        @if (isHindi) {
+
+          बच्चे की शिक्षा केवल विद्यालय की जिम्मेदारी नहीं है।
+          परिवार और विद्यालय के बीच मजबूत सहयोग बच्चों के
+          विकास को और अधिक meaningful बनाता है।
+
+        } @else {
+
+          A child's education is a shared journey. When
+          families and school work together, children receive
+          the encouragement and support they need to flourish.
+
+        }
+
+      </p>
+
+    </div>
+
+    <div class="family-mark">
+      <span>∞</span>
+      <small>
+        {{ isHindi ? 'सीखना कभी समाप्त नहीं होता' : 'Learning never ends' }}
+      </small>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ADMISSION CTA
+     ========================================================= -->
+
+<section class="admission-section">
+
+  <div class="admission-decoration admission-circle"></div>
+
+  <div class="admission-inner">
+
+    <span class="admission-eyebrow">
+
+      {{ isHindi ? 'प्रवेश प्रारंभ' : 'ADMISSIONS' }}
+
+    </span>
+
+
+    <h2>
+
+      @if (isHindi) {
+
+        अपने बच्चे की
+        <em>नई शुरुआत करें।</em>
+
+      } @else {
+
+        Begin your child's
+        <em>next chapter.</em>
+
+      }
+
+    </h2>
+
+
+    <p>
+
+      @if (isHindi) {
+
+        प्रवेश, कक्षा, विद्यालय भ्रमण या किसी अन्य जानकारी
+        के लिए हमसे संपर्क करें।
+
+      } @else {
+
+        Have questions about admission, classes, a school visit
+        or anything else? We would be happy to help.
+
+      }
+
+    </p>
+
+
+    <div class="admission-actions">
+
+      <a
+        routerLink="/contact"
+        class="admission-btn"
+      >
+
+        {{ isHindi ? 'प्रवेश पूछताछ करें' : 'Make an Admission Enquiry' }}
+
+        <span>→</span>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>

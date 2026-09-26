@@ -1,0 +1,845 @@
+<main class="academics-page">
+
+  <!-- =====================================================
+       HERO
+       ===================================================== -->
+
+  <section class="academic-hero">
+
+    <div class="academic-hero-bg" aria-hidden="true"></div>
+
+    <!-- Large luxury monogram -->
+    <div
+      class="academic-monogram"
+      aria-hidden="true"
+    >
+      <div class="monogram-orbit orbit-one"></div>
+      <div class="monogram-orbit orbit-two"></div>
+      <div class="monogram-orbit orbit-three"></div>
+
+      <img
+        src="assets/school/logo/logo.png"
+        alt=""
+      />
+    </div>
+
+    <!-- Decorative stars -->
+    <span class="academic-spark spark-one" aria-hidden="true">✦</span>
+    <span class="academic-spark spark-two" aria-hidden="true">✧</span>
+    <span class="academic-spark spark-three" aria-hidden="true">✦</span>
+    <span class="academic-spark spark-four" aria-hidden="true">·</span>
+
+    <!-- Decorative rings -->
+    <div class="hero-ring hero-ring-one" aria-hidden="true"></div>
+    <div class="hero-ring hero-ring-two" aria-hidden="true"></div>
+
+    <div class="academic-hero-inner">
+
+      <!-- Left -->
+      <div class="academic-hero-copy">
+
+        <div class="academic-eyebrow">
+          <span class="eyebrow-line"></span>
+          ACADEMICS · LKG TO CLASS 5
+        </div>
+
+        <h1>
+          Learning designed
+          <em>for childhood.</em>
+        </h1>
+
+        <p>
+          Strong foundations, curious minds and joyful learning —
+          thoughtfully designed for every stage of your child's
+          early school journey.
+        </p>
+
+        <div class="academic-hero-actions">
+
+          <a
+            routerLink="/contact"
+            class="academic-btn academic-btn-primary"
+          >
+            <span>Explore admissions</span>
+            <strong>→</strong>
+          </a>
+
+          <a
+            href="#learning-journey"
+            class="academic-btn academic-btn-secondary"
+          >
+            <span>Explore learning</span>
+            <strong>↓</strong>
+          </a>
+
+        </div>
+
+        <div class="academic-hero-meta">
+
+          <div>
+            <strong>LKG → 5</strong>
+            <span>Learning journey</span>
+          </div>
+
+          <div>
+            <strong>6+</strong>
+            <span>Key skill areas</span>
+          </div>
+
+          <div>
+            <strong>Since 1999</strong>
+            <span>School heritage</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right visual -->
+      <div class="academic-hero-visual">
+
+        <div class="hero-visual-glow"></div>
+
+        <div class="hero-learning-card">
+
+          <span class="hero-card-kicker">
+            THE JOURNEY
+          </span>
+
+          <strong>
+            LKG
+            <i>→</i>
+            Class 5
+          </strong>
+
+          <p>
+            Learn · Explore · Grow
+          </p>
+
+          <div class="hero-card-line"></div>
+
+          <span class="hero-card-caption">
+            Every stage. A new discovery.
+          </span>
+
+        </div>
+
+        <div class="floating-word word-one">
+          Curiosity
+        </div>
+
+        <div class="floating-word word-two">
+          Creativity
+        </div>
+
+        <div class="floating-word word-three">
+          Confidence
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="academic-scroll" aria-hidden="true">
+      <span></span>
+      <small>DISCOVER</small>
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       INTRODUCTION
+       ===================================================== -->
+
+  <section
+    class="academic-intro section"
+    id="academic-approach"
+  >
+
+    <div class="intro-grid">
+
+      <div class="intro-label">
+        <span></span>
+        OUR ACADEMIC APPROACH
+      </div>
+
+      <div class="intro-content">
+
+        <span class="section-kicker">
+          LEARNING WITH PURPOSE
+        </span>
+
+        <h2>
+          Give children strong roots
+          <em>and room to grow.</em>
+        </h2>
+
+        <p>
+          Our academic journey balances foundational knowledge
+          with curiosity, creativity, communication and confidence.
+          Children are encouraged to ask questions, explore ideas,
+          express themselves and learn through meaningful experiences.
+        </p>
+
+        <p>
+          Every stage builds naturally upon the previous one —
+          helping children become increasingly independent,
+          thoughtful and confident learners.
+        </p>
+
+        <div class="intro-signature">
+          <span></span>
+          <strong>
+            Learning · Character · Confidence
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       LEARNING JOURNEY
+       ===================================================== -->
+
+  <section
+    class="learning-journey section"
+    id="learning-journey"
+  >
+
+    <div class="journey-heading">
+
+      <div class="section-kicker">
+        THE LEARNING JOURNEY
+      </div>
+
+      <h2>
+        Every year opens
+        <em>a new chapter.</em>
+      </h2>
+
+      <p>
+        Explore the learning journey from the early years
+        through the primary stage.
+      </p>
+
+    </div>
+
+
+    <!-- Search -->
+    <div class="academic-search">
+
+      <span class="search-icon">⌕</span>
+
+      <input
+        type="search"
+        [(ngModel)]="searchTerm"
+        placeholder="Search a class, age group or learning focus..."
+        aria-label="Search academic classes"
+      />
+
+      @if (searchTerm) {
+        <button
+          type="button"
+          class="clear-search"
+          (click)="clearSearch()"
+          aria-label="Clear search"
+        >
+          ×
+        </button>
+      }
+
+    </div>
+
+
+    <!-- Tabs -->
+    <div class="journey-tabs">
+
+      @for (
+        item of classes;
+        track item.name;
+        let i = $index
+      ) {
+
+        <button
+          type="button"
+          class="journey-tab"
+          [class.active]="expandedClass === item.name"
+          (click)="scrollToClass(i)"
+        >
+
+          <span class="tab-number">
+            {{ (i + 1).toString().padStart(2, '0') }}
+          </span>
+
+          <span class="tab-name">
+            {{ item.name }}
+          </span>
+
+        </button>
+
+      }
+
+    </div>
+
+
+    <!-- Cards -->
+    <div class="academic-cards">
+
+      @for (
+        item of filteredClasses;
+        track item.name;
+        let i = $index
+      ) {
+
+        <article
+          class="academic-card"
+          [id]="'class-' + i"
+          [class.expanded]="expandedClass === item.name"
+        >
+
+          <div class="academic-card-image">
+
+            <img
+              [src]="item.image"
+              [alt]="item.name"
+              loading="lazy"
+            />
+
+            <div class="image-overlay"></div>
+
+            <span class="class-number">
+              {{ (i + 1).toString().padStart(2, '0') }}
+            </span>
+
+            <span class="class-age">
+              {{ item.age }}
+            </span>
+
+            <div class="image-label">
+              Explore · Discover · Grow
+            </div>
+
+          </div>
+
+
+          <div class="academic-card-content">
+
+            <span class="card-kicker">
+              {{ item.age }}
+            </span>
+
+            <h3>
+              {{ item.name }}
+            </h3>
+
+            <div class="focus">
+
+              <span>FOCUS</span>
+
+              <strong>
+                {{ item.focus }}
+              </strong>
+
+            </div>
+
+            <div class="card-divider"></div>
+
+            <h4>
+              What children explore
+            </h4>
+
+            <ul>
+
+              @for (
+                point of item.highlights;
+                track point
+              ) {
+
+                <li>
+                  <span class="check">✦</span>
+
+                  <span>
+                    {{ point }}
+                  </span>
+                </li>
+
+              }
+
+            </ul>
+
+
+            <button
+              type="button"
+              class="card-explore"
+              [attr.aria-expanded]="expandedClass === item.name"
+              (click)="toggleClass(item.name)"
+            >
+
+              <span>
+                {{
+                  expandedClass === item.name
+                    ? 'Close details'
+                    : 'Explore this stage'
+                }}
+              </span>
+
+              <strong>
+                {{
+                  expandedClass === item.name
+                    ? '↑'
+                    : '→'
+                }}
+              </strong>
+
+            </button>
+
+
+            @if (expandedClass === item.name) {
+
+              <div class="card-expanded">
+
+                <div class="expanded-line"></div>
+
+                <span>
+                  LEARNING SNAPSHOT
+                </span>
+
+                <p>
+                  This stage brings together the learning focus
+                  and experiences shown above, helping families
+                  understand the academic journey at a glance.
+                </p>
+
+                <a
+                  routerLink="/contact"
+                  class="stage-enquiry"
+                >
+                  Ask about this stage
+                  <span>→</span>
+                </a>
+
+              </div>
+
+            }
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+
+    @if (filteredClasses.length === 0) {
+
+      <div class="academic-empty">
+
+        <span>✦</span>
+
+        <h3>
+          We couldn't find that stage.
+        </h3>
+
+        <p>
+          Try searching for another class,
+          age group or learning focus.
+        </p>
+
+        <button
+          type="button"
+          (click)="clearSearch()"
+        >
+          Show all classes
+        </button>
+
+      </div>
+
+    }
+
+  </section>
+
+
+  <!-- =====================================================
+       INTERACTIVE LEARNING PILLARS
+       ===================================================== -->
+
+  <section class="learning-pillars section">
+
+    <div class="pillars-heading">
+
+      <span class="section-kicker">
+        HOW CHILDREN GROW
+      </span>
+
+      <h2>
+        Four pillars behind
+        <em>meaningful learning.</em>
+      </h2>
+
+      <p>
+        Academic development is part of a much bigger journey
+        of curiosity, communication and character.
+      </p>
+
+    </div>
+
+
+    <div class="pillars-explorer">
+
+      <div class="pillar-navigation">
+
+        @for (
+          pillar of learningPillars;
+          track pillar.number;
+          let i = $index
+        ) {
+
+          <button
+            type="button"
+            class="pillar-tab"
+            [class.active]="activePillar === i"
+            (click)="setPillar(i)"
+          >
+
+            <span>
+              {{ pillar.number }}
+            </span>
+
+            <strong>
+              {{ pillar.title }}
+            </strong>
+
+            <i>→</i>
+
+          </button>
+
+        }
+
+      </div>
+
+
+      <div class="pillar-feature">
+
+        <div class="pillar-feature-number">
+          {{ learningPillars[activePillar].number }}
+        </div>
+
+        <div class="pillar-feature-content">
+
+          <span>
+            ACADEMIC PILLAR
+          </span>
+
+          <h3>
+            {{ learningPillars[activePillar].title }}
+          </h3>
+
+          <p>
+            {{ learningPillars[activePillar].description }}
+          </p>
+
+        </div>
+
+        <div
+          class="pillar-feature-mark"
+          aria-hidden="true"
+        >
+          ✦
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       SKILLS
+       ===================================================== -->
+
+  <section class="skills-section section">
+
+    <div class="skills-heading">
+
+      <div class="section-kicker">
+        BEYOND THE CLASSROOM
+      </div>
+
+      <h2>
+        More than lessons.
+        <em>A foundation for life.</em>
+      </h2>
+
+      <p>
+        Academic growth works best when children develop
+        the confidence and character to use what they learn.
+      </p>
+
+    </div>
+
+
+    <div class="skills-grid">
+
+      <article class="skill-card">
+        <div class="skill-icon">
+          <span>01</span>
+        </div>
+
+        <h3>Curiosity</h3>
+
+        <p>
+          Children learn to ask questions, investigate ideas
+          and discover answers.
+        </p>
+      </article>
+
+
+      <article class="skill-card">
+        <div class="skill-icon">
+          <span>02</span>
+        </div>
+
+        <h3>Communication</h3>
+
+        <p>
+          Speaking, listening, reading and expressing ideas
+          with growing confidence.
+        </p>
+      </article>
+
+
+      <article class="skill-card">
+        <div class="skill-icon">
+          <span>03</span>
+        </div>
+
+        <h3>Creativity</h3>
+
+        <p>
+          Art, stories, imagination and projects give children
+          opportunities to create.
+        </p>
+      </article>
+
+
+      <article class="skill-card">
+        <div class="skill-icon">
+          <span>04</span>
+        </div>
+
+        <h3>Problem Solving</h3>
+
+        <p>
+          Children learn to think, experiment, connect ideas
+          and approach challenges thoughtfully.
+        </p>
+      </article>
+
+
+      <article class="skill-card">
+        <div class="skill-icon">
+          <span>05</span>
+        </div>
+
+        <h3>Collaboration</h3>
+
+        <p>
+          Learning with others develops respect, teamwork
+          and consideration.
+        </p>
+      </article>
+
+
+      <article class="skill-card">
+        <div class="skill-icon">
+          <span>06</span>
+        </div>
+
+        <h3>Confidence</h3>
+
+        <p>
+          Children are given meaningful opportunities to
+          participate, lead and express themselves.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       ACADEMIC PILLARS
+       ===================================================== -->
+
+  <section class="pillars-section section">
+
+    <div class="pillars-card">
+
+      <div
+        class="pillars-decoration"
+        aria-hidden="true"
+      ></div>
+
+      <div class="pillars-content">
+
+        <span class="pillars-kicker">
+          OUR ACADEMIC PILLARS
+        </span>
+
+        <h2>
+          Strong foundations.
+          <em>Joyful learning.</em>
+        </h2>
+
+        <p>
+          We believe children learn best when academic purpose
+          and childhood joy exist together.
+        </p>
+
+      </div>
+
+
+      <div class="pillar-list">
+
+        <div class="pillar-item">
+          <span>01</span>
+          <strong>
+            Foundational literacy & numeracy
+          </strong>
+        </div>
+
+        <div class="pillar-item">
+          <span>02</span>
+          <strong>
+            Language & communication
+          </strong>
+        </div>
+
+        <div class="pillar-item">
+          <span>03</span>
+          <strong>
+            Creative & experiential learning
+          </strong>
+        </div>
+
+        <div class="pillar-item">
+          <span>04</span>
+          <strong>
+            Values & social development
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PARENTS
+       ===================================================== -->
+
+  <section class="parent-section section">
+
+    <div class="parent-heading">
+
+      <span class="section-kicker">
+        FOR FAMILIES
+      </span>
+
+      <h2>
+        Everything you need to understand
+        <em>your child's learning journey.</em>
+      </h2>
+
+    </div>
+
+
+    <div class="parent-grid">
+
+      <article class="parent-card">
+
+        <span class="parent-number">01</span>
+
+        <h3>
+          What will my child learn?
+        </h3>
+
+        <p>
+          Explore the learning focus and highlights
+          for each stage from LKG through Class 5.
+        </p>
+
+        <a href="#learning-journey">
+          View learning stages
+          <span>→</span>
+        </a>
+
+      </article>
+
+
+      <article class="parent-card">
+
+        <span class="parent-number">02</span>
+
+        <h3>
+          How does learning happen?
+        </h3>
+
+        <p>
+          Discover the principles behind our approach
+          to foundational and joyful learning.
+        </p>
+
+        <a href="#academic-approach">
+          Our approach
+          <span>→</span>
+        </a>
+
+      </article>
+
+
+      <article class="parent-card">
+
+        <span class="parent-number">03</span>
+
+        <h3>
+          Have an admission question?
+        </h3>
+
+        <p>
+          Connect with the school to ask about admissions,
+          classes or your child's academic journey.
+        </p>
+
+        <a routerLink="/contact">
+          Talk to the school
+          <span>→</span>
+        </a>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       REUSABLE LUXURY CTA
+       ===================================================== -->
+
+  <svm-luxury-cta
+    title="Begin your child's academic journey."
+    description="Explore admissions, ask a question or discover more about Shri Ram Vidya Mandir Public School."
+  ></svm-luxury-cta>
+
+</main>

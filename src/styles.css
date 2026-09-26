@@ -1,0 +1,2 @@
+:root{--ink:#18251f;--muted:#66736d;--cream:#f7f4ec;--paper:#fffdf8;--green:#163d31;--green2:#245d4a;--gold:#c59a53;--line:#e6e0d4;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans)}button,input,textarea{font-family:inherit}::selection{background:#c59a5333;color:var(--green)}

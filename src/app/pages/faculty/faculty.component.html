@@ -1,0 +1,2 @@
+<section class="page-hero"><span>OUR PEOPLE</span><h1>The adults behind<br>the little moments.</h1></section>
+<section class="section"><div class="grid">@for (person of faculty; track person.name){<article><img [src]="person.image" [alt]="person.name"><div><span>{{person.role}}</span><h2>{{person.name}}</h2><p>{{person.bio}}</p></div></article>}</div></section>

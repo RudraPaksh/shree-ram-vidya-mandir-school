@@ -1,0 +1,93 @@
+<section class="luxury-cta">
+
+  <!-- Decorative Monogram -->
+  <div class="cta-monogram" aria-hidden="true">
+
+    <div class="cta-orbit orbit-one"></div>
+    <div class="cta-orbit orbit-two"></div>
+
+    <span class="cta-star star-one">✦</span>
+    <span class="cta-star star-two">✧</span>
+    <span class="cta-star star-three">✦</span>
+
+    <img
+      src="assets/school/logo/logo.png"
+      alt=""
+    />
+
+  </div>
+
+  <!-- Decorative glow -->
+  <div class="cta-glow glow-one" aria-hidden="true"></div>
+  <div class="cta-glow glow-two" aria-hidden="true"></div>
+
+  <div class="luxury-cta-inner">
+
+    <span class="cta-eyebrow">
+      SHRI RAM VIDYA MANDIR · SINCE 1999
+    </span>
+
+    <div class="cta-divider">
+      <span></span>
+      <i>✦</i>
+      <span></span>
+    </div>
+
+    <h2>
+      {{ title }}
+    </h2>
+
+    <p>
+      {{ description }}
+    </p>
+
+    <!-- Main actions -->
+    <div class="cta-actions">
+
+      @if (showAdmissions) {
+        <a
+          routerLink="/admissions"
+          class="cta-btn cta-primary"
+        >
+          <span>Explore Admissions</span>
+          <strong>→</strong>
+        </a>
+      }
+
+      @if (showEnquiry) {
+        <a
+          routerLink="/contact"
+          class="cta-btn cta-secondary"
+        >
+          <span>Admission Enquiry</span>
+          <strong>→</strong>
+        </a>
+      }
+
+      @if (showDiscover) {
+        <a
+          routerLink="/about"
+          class="cta-btn cta-ghost"
+        >
+          <span>Discover Our School</span>
+          <strong>→</strong>
+        </a>
+      }
+
+    </div>
+
+    <!-- Back to home -->
+    @if (showBackHome) {
+      <div class="back-home-wrap">
+        <a
+          routerLink="/"
+          class="back-home"
+        >
+          <span class="back-icon">←</span>
+          <span>Back to Home</span>
+        </a>
+      </div>
+    }
+
+  </div>
+</section>

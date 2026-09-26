@@ -1,0 +1,2210 @@
+/* =========================================================
+   SHREE RAM VIDYA MANDIR PUBLIC SCHOOL
+   ULTRA PREMIUM — HERITAGE SCHOOL HOMEPAGE
+   Responsive: Mobile / Tablet / Laptop / Desktop
+   ========================================================= */
+
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+:root {
+  --green: #174d3b;
+  --green-dark: #0d3529;
+  --green-deep: #09271e;
+  --green-light: #eaf3ee;
+
+  --gold: #c89532;
+  --gold-light: #e8c873;
+  --gold-soft: rgba(200, 149, 50, 0.14);
+
+  --saffron: #d88932;
+
+  --cream: #fbf7ee;
+  --cream-dark: #f2eadb;
+
+  --ink: #17231e;
+  --muted: #68736e;
+
+  --white: #ffffff;
+  --line: #e5ddd0;
+
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Inter, "Segoe UI", Arial, sans-serif;
+
+  --shadow-sm:
+    0 10px 30px rgba(23, 61, 49, 0.08);
+
+  --shadow-md:
+    0 20px 50px rgba(23, 61, 49, 0.12);
+
+  --shadow-lg:
+    0 35px 80px rgba(23, 61, 49, 0.16);
+
+  --shadow-luxury:
+    0 35px 90px rgba(13, 53, 41, 0.18);
+
+  --container:
+    1400px;
+}
+
+
+/* =========================================================
+   RESET / GLOBAL
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: calc(100vh - 71px);
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.92fr)
+    minmax(0, 1.08fr);
+
+  align-items: center;
+
+  gap: clamp(45px, 5vw, 90px);
+
+  padding:
+    clamp(55px, 6vw, 85px)
+    clamp(28px, 7vw, 110px);
+
+  background:
+    radial-gradient(
+      circle at 8% 12%,
+      rgba(200, 149, 50, 0.14),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(23, 77, 59, 0.10),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf8 0%,
+      var(--cream) 55%,
+      #f7f0e4 100%
+    );
+}
+
+
+/* =========================================================
+   HERO DECORATIVE CIRCLES
+   ========================================================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: clamp(320px, 38vw, 560px);
+  height: clamp(320px, 38vw, 560px);
+
+  top: -280px;
+  right: -180px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(200, 149, 50, 0.20);
+
+  box-shadow:
+    0 0 0 18px rgba(200, 149, 50, 0.025),
+    0 0 0 38px rgba(200, 149, 50, 0.018);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  bottom: -220px;
+  left: -180px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(23, 77, 59, 0.10);
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* =========================================================
+   LARGE SCHOOL MONOGRAM
+   ========================================================= */
+
+.hero-monogram {
+  position: absolute;
+
+  width: clamp(500px, 52vw, 850px);
+  height: clamp(500px, 52vw, 850px);
+
+  right: clamp(-190px, -7vw, -60px);
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: 0.18;
+
+  animation:
+    monogramReveal 1.4s cubic-bezier(.2,.8,.2,1) both;
+}
+
+
+/* =========================================================
+   MONOGRAM IMAGE
+   ========================================================= */
+
+.hero-monogram img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 18px;
+
+  filter:
+    saturate(1.12)
+    contrast(1.05)
+    drop-shadow(
+      0 20px 45px rgba(23, 77, 59, 0.12)
+    );
+
+  /*
+    Important:
+    Do NOT use multiply here if your logo contains
+    white/light areas.
+  */
+
+  mix-blend-mode: normal;
+
+  transition:
+    transform 0.8s ease,
+    filter 0.8s ease;
+}
+
+
+/* =========================================================
+   MONOGRAM GOLD RING
+   ========================================================= */
+
+.hero-monogram::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 5%;
+
+  border-radius: 50%;
+
+  border:
+    2px solid rgba(200, 149, 50, 0.28);
+
+  box-shadow:
+    0 0 0 10px rgba(200, 149, 50, 0.035),
+    0 0 0 22px rgba(200, 149, 50, 0.022),
+    inset 0 0 40px rgba(200, 149, 50, 0.055);
+
+  opacity: 0.95;
+}
+
+
+/* =========================================================
+   MONOGRAM INNER RING
+   ========================================================= */
+
+.hero-monogram::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 13%;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(23, 77, 59, 0.18);
+
+  box-shadow:
+    inset 0 0 30px rgba(23, 77, 59, 0.035);
+
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.hero-copy {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  max-width: 650px;
+
+  animation:
+    heroText 0.9s cubic-bezier(.2,.8,.2,1) both;
+}
+
+
+/* =========================================================
+   SCHOOL IDENTITY
+   ========================================================= */
+
+.school-identity {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  width: fit-content;
+
+  margin-bottom: 28px;
+
+  position: relative;
+  z-index: 4;
+}
+
+
+/* =========================================================
+   HERO LOGO
+   ========================================================= */
+
+.hero-logo {
+  width: 86px;
+  height: 86px;
+
+  flex: 0 0 86px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.94);
+
+  border-radius: 50%;
+
+  border:
+    2px solid rgba(200, 149, 50, 0.40);
+
+  box-shadow:
+    0 10px 28px rgba(23, 77, 59, 0.12),
+    0 2px 7px rgba(23, 77, 59, 0.07),
+    inset 0 0 0 5px rgba(200,149,50,0.035);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 5px;
+}
+
+
+/* =========================================================
+   LOGO HOVER
+   ========================================================= */
+
+.school-identity:hover .hero-logo {
+  transform:
+    translateY(-3px)
+    scale(1.035);
+
+  box-shadow:
+    0 16px 38px rgba(23, 77, 59, 0.17),
+    0 4px 10px rgba(23, 77, 59, 0.08),
+    inset 0 0 0 5px rgba(200,149,50,0.05);
+}
+
+
+/* =========================================================
+   SCHOOL BRAND
+   ========================================================= */
+
+.school-brand {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   SCHOOL NAME
+   IMPORTANT:
+   This is the ONLY school-name definition.
+   ========================================================= */
+
+.school-name {
+  display: block;
+
+  color: var(--green);
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(21px, 2vw, 29px);
+
+  font-weight: 700;
+
+  line-height: 1.12;
+
+  letter-spacing: -0.025em;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   PUBLIC SCHOOL
+   ========================================================= */
+
+.school-type {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 8px;
+
+  color: var(--gold);
+
+  font-family: var(--sans);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.25em;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   GOLD DECORATIVE LINES
+   ========================================================= */
+
+.school-type::before,
+.school-type::after {
+  content: "";
+
+  display: block;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold)
+    );
+
+  opacity: 0.65;
+}
+
+.school-type::before {
+  width: 24px;
+}
+
+.school-type::after {
+  width: 40px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   HERO EYEBROW
+   ========================================================= */
+
+.eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.22em;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+
+  width: 30px;
+  height: 1px;
+
+  background: var(--gold);
+
+  border-radius: 999px;
+}
+
+
+/* =========================================================
+   HERO HEADING
+   ========================================================= */
+
+.hero h1 {
+  position: relative;
+
+  max-width: 720px;
+
+  margin:
+    18px 0 28px;
+
+  color: var(--ink);
+
+  font-family: var(--serif);
+
+  font-size:
+    clamp(48px, 5.7vw, 82px);
+
+  font-weight: 600;
+
+  line-height: 0.99;
+
+  letter-spacing: -0.047em;
+}
+
+.hero h1 em {
+  position: relative;
+
+  color: var(--green);
+
+  font-style: italic;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   GOLD UNDERLINE
+   ========================================================= */
+
+.hero h1 em::after {
+  content: "";
+
+  position: absolute;
+
+  left: 3%;
+  right: 3%;
+
+  bottom: -8px;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      transparent
+    );
+
+  border-radius: 999px;
+
+  opacity: 0.72;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.hero p {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 13px;
+
+  margin-top: 32px;
+}
+
+
+/* =========================================================
+   BASE BUTTON
+   ========================================================= */
+
+.btn {
+  min-height: 52px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  padding:
+    0 24px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 750;
+
+  letter-spacing: 0.01em;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+/* =========================================================
+   LUXURY HOVER — DISCOVER OUR SCHOOL
+   ========================================================= */
+
+.btn-primary {
+  background:
+    linear-gradient(
+      135deg,
+      var(--green) 0%,
+      var(--green-dark) 100%
+    );
+
+  color: #fff !important;
+
+  border: 1px solid transparent;
+
+  box-shadow:
+    0 12px 28px rgba(23, 77, 59, 0.22);
+
+  transition:
+    color 0.3s ease,
+    background 0.35s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Luxury emerald hover */
+.btn-primary:hover {
+  color: #ffffff !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #236b50 0%,
+      #123f30 48%,
+      #09271e 100%
+    );
+
+  border-color:
+    rgba(232, 200, 115, 0.55);
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 16px 35px rgba(13, 53, 41, 0.30),
+    0 0 0 1px rgba(200, 149, 50, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+
+/* Arrow refinement */
+.btn-primary span {
+  font-size: 18px;
+
+  color: #ffffff;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.btn-primary:hover span {
+  color: var(--gold-light);
+
+  transform:
+    translateX(5px);
+}
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-primary::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: -120%;
+
+  width: 70%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.13),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition:
+    left 0.7s ease;
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  left: 140%;
+}
+
+/* =========================================================
+   GALLERY BUTTON
+   ========================================================= */
+
+.btn-gallery {
+  background:
+    rgba(255,255,255,0.78);
+
+  color: var(--green) !important;
+
+  border:
+    1px solid var(--line);
+
+  backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+    0 6px 20px rgba(23,61,49,0.035);
+}
+
+.btn-gallery:hover {
+  background: #fff;
+
+  border-color:
+    rgba(23,77,59,0.40);
+
+  box-shadow:
+    0 12px 28px rgba(23,77,59,0.10);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero-art {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  min-height: 420px;
+
+  border-radius:
+    clamp(26px, 3vw, 40px);
+
+  overflow: hidden;
+
+  background: var(--green);
+
+  box-shadow:
+    var(--shadow-luxury);
+
+  isolation: isolate;
+
+  animation:
+    heroImage 1s cubic-bezier(.2,.8,.2,1) both;
+}
+
+
+/* =========================================================
+   HERO IMAGE OVERLAY
+   ========================================================= */
+
+.hero-art::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(13,53,41,0.02),
+      rgba(13,53,41,0.24)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO IMAGE DECORATIVE CIRCLE
+   ========================================================= */
+
+.hero-art::after {
+  content: "";
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  top: 28px;
+  right: 28px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255,255,255,0.42);
+
+  box-shadow:
+    0 0 0 12px rgba(255,255,255,0.025);
+
+  z-index: 2;
+
+  opacity: 0.75;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero-art img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.hero-art:hover img {
+  transform: scale(1.035);
+}
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.section {
+  position: relative;
+
+  width: 100%;
+  max-width: var(--container);
+
+  margin: 0 auto;
+
+  padding:
+    clamp(75px, 8vw, 115px)
+    clamp(24px, 7vw, 110px);
+}
+
+
+/* =========================================================
+   CREAM SECTION
+   ========================================================= */
+
+.cream {
+  max-width: none;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(200,149,50,0.08),
+      transparent 25%
+    ),
+    var(--cream);
+}
+
+
+/* =========================================================
+   STATS
+   ========================================================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-top:
+    1px solid var(--line);
+
+  border-bottom:
+    1px solid var(--line);
+
+  background:
+    rgba(255,255,255,0.38);
+
+  backdrop-filter:
+    blur(10px);
+}
+
+.stats div {
+  padding:
+    36px 22px;
+
+  text-align: center;
+
+  transition:
+    background 0.25s ease;
+}
+
+.stats div:hover {
+  background:
+    rgba(255,255,255,0.72);
+}
+
+.stats div + div {
+  border-left:
+    1px solid var(--line);
+}
+
+.stats strong {
+  display: block;
+
+  color: var(--green);
+
+  font:
+    600 46px var(--serif);
+
+  line-height: 1;
+}
+
+.stats span {
+  display: block;
+
+  margin-top: 9px;
+
+  color: var(--muted);
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.14em;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   CLASS GRID
+   ========================================================= */
+
+.class-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.class-card {
+  position: relative;
+
+  background: #fff;
+
+  border:
+    1px solid var(--line);
+
+  border-radius: 26px;
+
+  overflow: hidden;
+
+  color: var(--ink);
+
+  text-decoration: none;
+
+  box-shadow:
+    0 5px 18px rgba(23,61,49,0.035);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.class-card:hover {
+  transform:
+    translateY(-8px);
+
+  border-color:
+    rgba(200,149,50,0.45);
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+.class-card img {
+  width: 100%;
+
+  height: 185px;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.class-card:hover img {
+  transform:
+    scale(1.05);
+}
+
+.class-card div {
+  padding: 21px;
+}
+
+.class-card span,
+.topper span {
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+
+  color: var(--gold);
+
+  font-weight: 800;
+}
+
+.class-card h3 {
+  margin:
+    8px 0;
+
+  color: var(--green);
+
+  font:
+    600 23px var(--serif);
+}
+
+.class-card p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FEATURE SECTION
+   ========================================================= */
+
+.feature-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  align-items: center;
+
+  gap:
+    clamp(45px, 7vw, 90px);
+}
+
+.feature-grid img {
+  width: 100%;
+
+  border-radius: 34px;
+
+  box-shadow:
+    var(--shadow-md);
+
+  transition:
+    transform 0.5s ease;
+}
+
+.feature-grid img:hover {
+  transform:
+    translateY(-6px);
+}
+
+
+/* =========================================================
+   TEXT LINKS
+   ========================================================= */
+
+.text-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 16px;
+
+  color: var(--green);
+
+  font-weight: 800;
+
+  text-decoration: none;
+}
+
+.text-link::after {
+  content: "→";
+
+  transition:
+    transform 0.25s ease;
+}
+
+.text-link:hover::after {
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery-preview {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.gallery-preview app-image-card {
+  display: block;
+
+  min-width: 0;
+}
+
+.gallery-preview img {
+  display: block;
+
+  width: 100%;
+
+  height: 250px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   CENTER LINK
+   ========================================================= */
+
+.center-link {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 36px;
+}
+
+.center-link .btn-primary {
+  min-width: 190px;
+}
+
+
+/* =========================================================
+   TOPPERS
+   ========================================================= */
+
+.topper-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.topper {
+  border:
+    1px solid var(--line);
+
+  border-radius: 26px;
+
+  overflow: hidden;
+
+  background: #fff;
+
+  box-shadow:
+    0 8px 25px rgba(23,61,49,0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.topper:hover {
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+.topper img {
+  width: 100%;
+
+  height: 310px;
+
+  object-fit: cover;
+}
+
+.topper div {
+  padding: 23px;
+}
+
+.topper h3 {
+  margin:
+    8px 0;
+
+  color: var(--green);
+
+  font:
+    600 25px var(--serif);
+}
+
+.topper strong {
+  display: inline-block;
+
+  margin-top: 4px;
+
+  color: var(--green);
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   SECTION ANIMATION
+   ========================================================= */
+
+.section > * {
+  animation:
+    fadeUp 0.8s ease both;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes heroText {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+@keyframes heroImage {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+}
+
+@keyframes monogramReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-50%)
+      scale(0.90)
+      rotate(-4deg);
+  }
+
+  to {
+    opacity: 0.18;
+
+    transform:
+      translateY(-50%)
+      scale(1)
+      rotate(0deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =========================================================
+   LARGE LAPTOP — 1101px to 1400px
+   ========================================================= */
+
+@media (max-width: 1400px) {
+
+  .hero {
+    gap: 55px;
+
+    padding-left:
+      clamp(35px, 5vw, 80px);
+
+    padding-right:
+      clamp(35px, 5vw, 80px);
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(46px, 5.5vw, 72px);
+  }
+
+  .hero-art {
+    min-height: 380px;
+  }
+
+  .hero-monogram {
+    width: 620px;
+    height: 620px;
+
+    right: -150px;
+
+    opacity: 0.16;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 0.9fr);
+
+    gap: 38px;
+
+    padding:
+      60px 42px;
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(44px, 5.8vw, 66px);
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-art {
+    min-height: 330px;
+
+    border-radius: 30px;
+  }
+
+  .hero-monogram {
+    width: 560px;
+    height: 560px;
+
+    right: -190px;
+
+    opacity: 0.13;
+  }
+
+  .class-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .gallery-preview {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 16px;
+  }
+
+  .gallery-preview img {
+    height: 220px;
+  }
+
+  .topper-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .feature-grid {
+    gap: 45px;
+  }
+}
+
+
+/* =========================================================
+   TABLET PORTRAIT
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding:
+      60px 30px 70px;
+
+    gap: 42px;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .hero-art {
+    width: 100%;
+
+    min-height: 360px;
+
+    aspect-ratio: 16 / 10;
+  }
+
+  .hero-monogram {
+    width: 620px;
+    height: 620px;
+
+    right: -280px;
+
+    top: 37%;
+
+    opacity: 0.11;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .stats {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .section {
+    padding:
+      80px 30px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .hero {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding:
+      38px 20px 55px;
+
+    gap: 34px;
+
+    background:
+      radial-gradient(
+        circle at 20% 10%,
+        rgba(200,149,50,0.12),
+        transparent 32%
+      ),
+      radial-gradient(
+        circle at 90% 75%,
+        rgba(23,77,59,0.08),
+        transparent 35%
+      ),
+      var(--cream);
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE MONOGRAM
+     --------------------------------------------------------- */
+
+  .hero-monogram {
+    width: 430px;
+    height: 430px;
+
+    right: -190px;
+
+    top: 43%;
+
+    opacity: 0.095;
+  }
+
+  .hero-monogram img {
+    padding: 12px;
+  }
+
+  .hero-monogram::before {
+    inset: 5%;
+
+    border-width: 1px;
+  }
+
+  .hero-monogram::after {
+    inset: 14%;
+
+    border-width: 1px;
+  }
+
+
+  /* ---------------------------------------------------------
+     SCHOOL IDENTITY
+     --------------------------------------------------------- */
+
+  .school-identity {
+    gap: 13px;
+
+    margin-bottom: 25px;
+  }
+
+  .hero-logo {
+    width: 67px;
+    height: 67px;
+
+    flex-basis: 67px;
+
+    border-width: 1.5px;
+  }
+
+  .hero-logo img {
+    padding: 4px;
+  }
+
+  .school-name {
+    font-size: 18px;
+
+    line-height: 1.1;
+
+    white-space: normal;
+  }
+
+  .school-type {
+    gap: 7px;
+
+    margin-top: 6px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.18em;
+  }
+
+  .school-type::before {
+    width: 15px;
+  }
+
+  .school-type::after {
+    width: 25px;
+  }
+
+
+  /* ---------------------------------------------------------
+     EYEBROW
+     --------------------------------------------------------- */
+
+  .eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 0.18em;
+
+    gap: 8px;
+  }
+
+  .eyebrow::before {
+    width: 22px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE HEADING
+     --------------------------------------------------------- */
+
+  .hero h1 {
+    max-width: 100%;
+
+    margin:
+      14px 0 21px;
+
+    font-size:
+      clamp(40px, 12vw, 58px);
+
+    line-height: 1.00;
+
+    letter-spacing: -0.045em;
+  }
+
+  .hero h1 em::after {
+    bottom: -5px;
+
+    height: 2px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE DESCRIPTION
+     --------------------------------------------------------- */
+
+  .hero p {
+    max-width: 100%;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE BUTTONS
+     --------------------------------------------------------- */
+
+  .hero-actions {
+    display: grid;
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 25px;
+  }
+
+  .btn {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+      0 14px;
+
+    font-size: 12px;
+  }
+
+  .btn-primary {
+    gap: 7px;
+  }
+
+  .btn-primary span {
+    font-size: 16px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE HERO IMAGE
+     --------------------------------------------------------- */
+
+  .hero-art {
+    width: 100%;
+
+    min-height: 0;
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: 24px;
+
+    box-shadow:
+      0 22px 55px rgba(13,53,41,0.16);
+  }
+
+  .hero-art::after {
+    width: 70px;
+    height: 70px;
+
+    top: 17px;
+    right: 17px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE SECTIONS
+     --------------------------------------------------------- */
+
+  .section {
+    padding:
+      70px 20px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE STATS
+     --------------------------------------------------------- */
+
+  .stats {
+    grid-template-columns:
+      1fr;
+  }
+
+  .stats div {
+    padding:
+      25px 18px;
+  }
+
+  .stats div + div {
+    border-left: 0;
+
+    border-top:
+      1px solid var(--line);
+  }
+
+  .stats strong {
+    font-size: 38px;
+  }
+
+  .stats span {
+    font-size: 9px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE CLASS CARDS
+     --------------------------------------------------------- */
+
+  .class-grid {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 12px;
+  }
+
+  .class-card {
+    border-radius: 18px;
+  }
+
+  .class-card img {
+    height: 135px;
+  }
+
+  .class-card div {
+    padding: 15px;
+  }
+
+  .class-card span {
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+  }
+
+  .class-card h3 {
+    font-size: 19px;
+
+    margin:
+      6px 0;
+  }
+
+  .class-card p {
+    font-size: 11px;
+
+    line-height: 1.55;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE FEATURE
+     --------------------------------------------------------- */
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .feature-grid img {
+    border-radius: 23px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE GALLERY
+     --------------------------------------------------------- */
+
+  .gallery-preview {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 28px;
+  }
+
+  .gallery-preview img {
+    height: 165px;
+
+    border-radius: 15px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE TOPPERS
+     --------------------------------------------------------- */
+
+  .topper-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 16px;
+  }
+
+  .topper {
+    border-radius: 20px;
+  }
+
+  .topper img {
+    height: 280px;
+  }
+
+  .topper div {
+    padding: 19px;
+  }
+
+  .topper h3 {
+    font-size: 22px;
+  }
+
+
+  /* ---------------------------------------------------------
+     MOBILE CENTER BUTTON
+     --------------------------------------------------------- */
+
+  .center-link {
+    margin-top: 28px;
+  }
+
+  .center-link .btn-primary {
+    width: 100%;
+
+    min-width: 0;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — 430px
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .hero {
+    padding:
+      32px 16px 45px;
+
+    gap: 30px;
+  }
+
+  .hero-monogram {
+    width: 350px;
+    height: 350px;
+
+    right: -155px;
+
+    top: 43%;
+
+    opacity: 0.08;
+  }
+
+  .hero-logo {
+    width: 60px;
+    height: 60px;
+
+    flex-basis: 60px;
+  }
+
+  .school-identity {
+    gap: 11px;
+  }
+
+  .school-name {
+    font-size: 16px;
+  }
+
+  .school-type {
+    font-size: 6.5px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .school-type::before {
+    width: 11px;
+  }
+
+  .school-type::after {
+    width: 20px;
+  }
+
+  .hero h1 {
+    font-size:
+      clamp(37px, 12vw, 50px);
+
+    margin-top: 13px;
+  }
+
+  .hero p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .hero-actions {
+    grid-template-columns:
+      1fr;
+  }
+
+  .btn {
+    min-height: 49px;
+  }
+
+  .hero-art {
+    aspect-ratio: 1 / 0.88;
+
+    border-radius: 20px;
+  }
+
+  .section {
+    padding:
+      60px 16px;
+  }
+
+  .class-grid {
+    gap: 10px;
+  }
+
+  .class-card img {
+    height: 120px;
+  }
+
+  .class-card div {
+    padding: 13px;
+  }
+
+  .class-card h3 {
+    font-size: 17px;
+  }
+
+  .class-card p {
+    font-size: 10.5px;
+  }
+
+  .gallery-preview {
+    gap: 8px;
+  }
+
+  .gallery-preview img {
+    height: 140px;
+
+    border-radius: 12px;
+  }
+
+  .topper img {
+    height: 250px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES — 360px
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .hero {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero-logo {
+    width: 55px;
+    height: 55px;
+
+    flex-basis: 55px;
+  }
+
+  .school-name {
+    font-size: 15px;
+  }
+
+  .school-type {
+    font-size: 6px;
+
+    letter-spacing: 0.13em;
+  }
+
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .hero p {
+    font-size: 12.5px;
+  }
+
+  .hero-monogram {
+    width: 310px;
+    height: 310px;
+
+    right: -140px;
+
+    opacity: 0.065;
+  }
+
+  .hero-art {
+    aspect-ratio: 1 / 0.86;
+  }
+
+  .class-card img {
+    height: 110px;
+  }
+
+  .class-card h3 {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP — 1440px+
+   ========================================================= */
+
+@media (min-width: 1441px) {
+
+  .hero {
+    padding-left:
+      max(80px, calc((100vw - 1500px) / 2));
+
+    padding-right:
+      max(80px, calc((100vw - 1500px) / 2));
+
+    gap: 90px;
+  }
+
+  .hero h1 {
+    font-size: 82px;
+  }
+
+  .hero-art {
+    min-height: 500px;
+
+    border-radius: 42px;
+  }
+
+  .hero-monogram {
+    width: 900px;
+    height: 900px;
+
+    right: -180px;
+
+    opacity: 0.19;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION / ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    scroll-behavior:
+      auto !important;
+  }
+}

@@ -1,0 +1,780 @@
+/* =========================================================
+   LUXURY CTA
+   SHRI RAM VIDYA MANDIR PUBLIC SCHOOL
+   ========================================================= */
+
+.luxury-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 120px 7vw 90px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(200,149,50,.16),
+      transparent 34%
+    ),
+    linear-gradient(
+      135deg,
+      #fbf7ee 0%,
+      #f6efe2 100%
+    );
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.luxury-cta-inner {
+  position: relative;
+  z-index: 5;
+
+  width: min(900px, 100%);
+  margin: auto;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+  font-weight: 850;
+
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+.cta-eyebrow::before,
+.cta-eyebrow::after {
+  content: "";
+
+  width: 25px;
+  height: 1px;
+
+  background: var(--gold);
+
+  opacity: .7;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.cta-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  margin: 20px auto 24px;
+}
+
+.cta-divider span {
+  width: 45px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(200,149,50,.65)
+    );
+}
+
+.cta-divider span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(200,149,50,.65),
+      transparent
+    );
+}
+
+.cta-divider i {
+  color: var(--gold);
+
+  font-family: Georgia, serif;
+  font-size: 13px;
+
+  font-style: normal;
+
+  animation: ctaSparkle 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.luxury-cta h2 {
+  max-width: 780px;
+  margin: 0 auto 22px;
+
+  color: var(--ink);
+
+  font:
+    600 clamp(42px, 5vw, 68px) / 1.03
+    var(--serif);
+
+  letter-spacing: -.045em;
+}
+
+.luxury-cta h2::first-letter {
+  color: var(--green);
+}
+
+
+.luxury-cta p {
+  max-width: 620px;
+  margin: auto;
+
+  color: var(--muted);
+
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 36px;
+}
+
+
+/* =========================================================
+   BASE BUTTON
+   ========================================================= */
+
+.cta-btn {
+  position: relative;
+
+  min-height: 54px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  padding: 0 25px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 850;
+
+  letter-spacing: .01em;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    background .3s ease,
+    border-color .3s ease;
+}
+
+.cta-btn strong {
+  font-size: 18px;
+  font-weight: 500;
+
+  transition:
+    transform .3s ease,
+    color .3s ease;
+}
+
+
+/* =========================================================
+   PRIMARY — EXPLORE ADMISSIONS
+   ========================================================= */
+
+.cta-primary {
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--green),
+      var(--green-dark)
+    );
+
+  box-shadow:
+    0 14px 32px rgba(23,77,59,.22);
+}
+
+.cta-primary::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 1px;
+
+  border-radius: inherit;
+
+  border: 1px solid rgba(255,255,255,.13);
+
+  pointer-events: none;
+}
+
+.cta-primary:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 42px rgba(23,77,59,.30);
+}
+
+.cta-primary:hover strong {
+  color: var(--gold-light);
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   SECONDARY — ADMISSION ENQUIRY
+   ========================================================= */
+
+.cta-secondary {
+  color: var(--green);
+
+  background: rgba(255,255,255,.75);
+
+  border: 1px solid rgba(200,149,50,.35);
+
+  box-shadow:
+    0 8px 25px rgba(23,61,49,.05);
+
+  backdrop-filter: blur(12px);
+}
+
+.cta-secondary:hover {
+  transform: translateY(-4px);
+
+  background: #fff;
+
+  border-color: var(--gold);
+
+  box-shadow:
+    0 15px 32px rgba(23,61,49,.12);
+}
+
+.cta-secondary:hover strong {
+  color: var(--gold);
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   GHOST — DISCOVER OUR SCHOOL
+   ========================================================= */
+
+.cta-ghost {
+  color: var(--green);
+
+  background: transparent;
+
+  border: 1px solid rgba(23,77,59,.18);
+}
+
+.cta-ghost:hover {
+  transform: translateY(-4px);
+
+  background: rgba(23,77,59,.05);
+
+  border-color: rgba(23,77,59,.35);
+
+  box-shadow:
+    0 12px 28px rgba(23,61,49,.08);
+}
+
+.cta-ghost:hover strong {
+  color: var(--gold);
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   BACK HOME
+   ========================================================= */
+
+.back-home-wrap {
+  margin-top: 42px;
+}
+
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--muted);
+
+  text-decoration: none;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+.back-icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  color: var(--green);
+
+  background: #fff;
+
+  border: 1px solid var(--line);
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    color .25s ease;
+}
+
+.back-home:hover {
+  color: var(--green);
+}
+
+.back-home:hover .back-icon {
+  transform: translateX(-4px);
+
+  color: var(--gold);
+
+  border-color:
+    rgba(200,149,50,.45);
+}
+
+
+/* =========================================================
+   MONOGRAM
+   ========================================================= */
+
+.cta-monogram {
+  position: absolute;
+
+  width: clamp(520px, 62vw, 900px);
+  height: clamp(520px, 62vw, 900px);
+
+  right: -230px;
+  top: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  opacity: .065;
+
+  animation:
+    monogramFloat 11s ease-in-out infinite;
+}
+
+.cta-monogram img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  padding: 25px;
+
+  filter:
+    saturate(1.1)
+    contrast(1.05);
+
+  mix-blend-mode: multiply;
+}
+
+
+/* =========================================================
+   MONOGRAM ORBITS
+   ========================================================= */
+
+.cta-orbit {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  inset: 4%;
+
+  border:
+    1px solid rgba(200,149,50,.28);
+
+  box-shadow:
+    0 0 0 14px rgba(200,149,50,.018),
+    0 0 0 30px rgba(200,149,50,.012);
+}
+
+.orbit-two {
+  inset: 13%;
+
+  border:
+    1px solid rgba(23,77,59,.13);
+
+  animation:
+    orbitRotate 22s linear infinite;
+}
+
+.orbit-two::after {
+  content: "";
+
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  top: 8%;
+  left: 50%;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  box-shadow:
+    0 0 0 5px rgba(200,149,50,.07);
+}
+
+
+/* =========================================================
+   SPARKLES
+   ========================================================= */
+
+.cta-star {
+  position: absolute;
+
+  color: var(--gold);
+
+  font-family: Georgia, serif;
+
+  opacity: .5;
+
+  z-index: 3;
+}
+
+.star-one {
+  top: 17%;
+  left: 28%;
+
+  font-size: 19px;
+
+  animation:
+    floatingStar 5s ease-in-out infinite;
+}
+
+.star-two {
+  right: 18%;
+  bottom: 24%;
+
+  font-size: 13px;
+
+  animation:
+    floatingStar 6s ease-in-out infinite reverse;
+}
+
+.star-three {
+  top: 31%;
+  right: 7%;
+
+  font-size: 11px;
+
+  animation:
+    floatingStar 4s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   GLOW
+   ========================================================= */
+
+.cta-glow {
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  filter: blur(2px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.glow-one {
+  left: -180px;
+  bottom: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(23,77,59,.07),
+      transparent 68%
+    );
+}
+
+.glow-two {
+  right: -160px;
+  top: -160px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(200,149,50,.09),
+      transparent 68%
+    );
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes monogramFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(-50%)
+      rotate(0deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      translateY(calc(-50% - 12px))
+      rotate(1.5deg)
+      scale(1.015);
+  }
+}
+
+@keyframes orbitRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatingStar {
+
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(.8)
+      rotate(0deg);
+
+    opacity: .25;
+  }
+
+  50% {
+    transform:
+      translateY(-15px)
+      scale(1.15)
+      rotate(18deg);
+
+    opacity: .75;
+  }
+}
+
+@keyframes ctaSparkle {
+
+  0%,
+  100% {
+    transform: scale(.8);
+    opacity: .35;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: .9;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .luxury-cta {
+    padding:
+      90px 6vw
+      70px;
+  }
+
+  .cta-monogram {
+    width: 560px;
+    height: 560px;
+
+    right: -260px;
+
+    opacity: .055;
+  }
+
+  .luxury-cta h2 {
+    font-size:
+      clamp(38px, 8vw, 55px);
+  }
+
+  .cta-actions {
+    gap: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .luxury-cta {
+    padding:
+      78px 5vw
+      60px;
+  }
+
+  .cta-eyebrow {
+    font-size: 8px;
+    letter-spacing: .18em;
+  }
+
+  .cta-eyebrow::before,
+  .cta-eyebrow::after {
+    width: 15px;
+  }
+
+  .luxury-cta h2 {
+    font-size: 39px;
+    line-height: 1.05;
+  }
+
+  .luxury-cta p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .cta-btn {
+    width: 100%;
+    min-height: 54px;
+  }
+
+  .back-home-wrap {
+    margin-top: 30px;
+  }
+
+  .cta-monogram {
+    width: 420px;
+    height: 420px;
+
+    right: -205px;
+    top: 45%;
+
+    opacity: .045;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .luxury-cta h2 {
+    font-size: 35px;
+  }
+
+  .cta-monogram {
+    width: 350px;
+    height: 350px;
+
+    right: -175px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.cta-btn:focus-visible,
+.back-home:focus-visible {
+  outline: 3px solid rgba(200,149,50,.45);
+  outline-offset: 4px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cta-monogram,
+  .cta-orbit,
+  .cta-star,
+  .cta-divider i {
+    animation: none !important;
+  }
+
+  .cta-btn,
+  .back-home,
+  .back-icon {
+    transition: none !important;
+  }
+
+}
