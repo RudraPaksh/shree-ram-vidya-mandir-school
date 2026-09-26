@@ -1150,35 +1150,28 @@ nav .nav-cta:hover b {
 
   /* links */
 
-  nav a {
+ nav a {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 12px;
+  border-radius: 12px;
+  font-size: 13.5px;
+  justify-content: flex-start;
+  gap: 10px;
 
-    width: 100%;
+  /* IMPORTANT: keep menu links visible */
+  opacity: 1;
+  transform: translateX(0);
 
-    box-sizing: border-box;
+  transition:
+    background .25s ease,
+    color .25s ease,
+    transform .25s ease;
+}
 
-    padding:
-      13px 12px;
-
-    border-radius: 12px;
-
-    font-size: 13.5px;
-
-    justify-content: flex-start;
-
-    gap: 10px;
-
-    opacity: 0;
-
-    transform:
-      translateX(-8px);
-  }
-
-
-  nav.open a {
-
-    animation:
-      mobileLinkIn .35s ease forwards;
-  }
+nav.open a {
+  animation: mobileLinkIn .35s ease forwards;
+}
 
 
   nav.open a:nth-of-type(1) {
